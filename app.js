@@ -24,7 +24,6 @@ var svg = d3.select("#scatter")
 var chartGroup = svg.append("g")
     .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
-//MAKE SURE PATH WORKS!!!!!!!!!!!!!!!!!!! THIS IS WHERE YOU MIGHT NEED TO TROUBLESHOOT
 //set healthcare and poverty data to integers by using +
 d3.csv("data.csv").then(function(healthData) {
     healthData.forEach(function(data) {
@@ -66,7 +65,7 @@ d3.csv("data.csv").then(function(healthData) {
         .append("p")
         .attr("left", d => xLinearScale(d.poverty))
         .attr("top", d => yLinearScale(d.healthcare))
-        .attr("p", d => d.abbr) //QUE ES ESTO?
+        .attr("p", d => d.abbr) 
     
     var toolTip = d3.tip()
         .attr("class", "d3-tip")
